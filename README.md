@@ -4,7 +4,7 @@ A simple Notepad clone for Windows. Created for a college project in 2017, made 
 ## Screenshots
 
 Word wrap on:   
-![A screenshot of Simplepad with Word Wrap enabled.](/.readme-resources/wrap_enabled.png)
+![A screenshot of Simplepad with Word Wrap enabled.](/.readme-resources/wrap_on.png)
 
 Word wrap off:    
 ![A screenshot of Simplepad with Word Wrap disabled.](/.readme-resources/wrap_off.png)
