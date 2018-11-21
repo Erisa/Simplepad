@@ -1,0 +1,1 @@
+﻿Hello world! This is a test of the Simplepad text editor with word wrap enabled.

@@ -1,0 +1,7 @@
+﻿this
+test
+file
+has
+unix
+line
+endings!
