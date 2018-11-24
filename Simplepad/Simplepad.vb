@@ -14,6 +14,7 @@
     Private Sub OpenFile()
         rtxtNotepad.Text = My.Computer.FileSystem.ReadAllText(OpenFileDialog1.FileName)
         CurrentFile = OpenFileDialog1.FileName
+        Me.Text = System.IO.Path.GetFileName(CurrentFile) + " - Simplepad"
         Debug.Print("Opened file: " & CurrentFile)
         txtWorkingFile.Text = CurrentFile
         btnReload.Enabled = True
@@ -37,6 +38,7 @@
             CurrentFile = SaveFileDialog1.FileName
             My.Computer.FileSystem.WriteAllText(CurrentFile, rtxtNotepad.Text, False)
             Debug.Print("Saved to file: " & CurrentFile)
+            Me.Text = System.IO.Path.GetFileName(CurrentFile) + " - Simplepad"
             txtWorkingFile.Text = CurrentFile
             btnReload.Enabled = True
         End If
@@ -46,6 +48,7 @@
         CurrentFile = Nothing
         rtxtNotepad.Text = ""
         txtWorkingFile.Text = CurrentFile
+        Me.Text = "Untitled - Simplepad"
         Debug.Print("New file created")
         btnReload.Enabled = False
     End Sub
@@ -74,7 +77,7 @@
         End If
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For Each argument As String In My.Application.CommandLineArgs
             CurrentFile = argument
             OpenFile()
