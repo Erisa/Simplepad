@@ -5,7 +5,7 @@
     Dim FileOpen As Boolean
 
 
-    Private Sub OpenDialog(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click
+    Private Sub OpenDialog(sender As Object, e As EventArgs) Handles OpenToolStripMenuItem.Click, btnOpen.Click
         If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             OpenFile()
         End If
@@ -20,7 +20,7 @@
         btnReload.Enabled = True
     End Sub
 
-    Private Sub SaveFile(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click
+    Private Sub SaveFile(sender As Object, e As EventArgs) Handles SaveToolStripMenuItem.Click, btnSaveFile.Click
         If CurrentFile = Nothing Then
             SaveAs()
         Else
@@ -29,7 +29,7 @@
         End If
     End Sub
 
-    Private Sub btnSaveAs(sender As Object, e As EventArgs)
+    Private Sub btnSaveAs(sender As Object, e As EventArgs) Handles btnSaveAs1.Click
         SaveAs()
     End Sub
 
@@ -44,7 +44,7 @@
         End If
     End Sub
 
-    Private Sub NewFile(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+    Private Sub NewFile(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click, btnNew.Click
         CurrentFile = Nothing
         rtxtNotepad.Text = ""
         txtWorkingFile.Text = CurrentFile
@@ -69,7 +69,7 @@
         End If
     End Sub
 
-    Private Sub btnReload_Click(sender As Object, e As EventArgs)
+    Private Sub Reload(sender As Object, e As EventArgs) Handles btnReload.Click, ReloadToolStripMenuItem.Click
         If CurrentFile = Nothing Then
             btnReload.Enabled = False
         Else
@@ -84,7 +84,4 @@
         Next
     End Sub
 
-    Private Sub ReloadToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReloadToolStripMenuItem.Click
-
-    End Sub
 End Class

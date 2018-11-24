@@ -27,25 +27,26 @@ Partial Class Simplepad
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReloadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WordWrapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.rtxtNotepad = New System.Windows.Forms.RichTextBox()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.FontDialog1 = New System.Windows.Forms.FontDialog()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.ReloadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btnReload = New System.Windows.Forms.Button()
         Me.btnNew = New System.Windows.Forms.Button()
         Me.txtWorkingFile = New System.Windows.Forms.TextBox()
         Me.btnSaveAs1 = New System.Windows.Forms.Button()
-        Me.btnSaveFile1 = New System.Windows.Forms.Button()
-        Me.btnOpen1 = New System.Windows.Forms.Button()
+        Me.btnSaveFile = New System.Windows.Forms.Button()
+        Me.btnOpen = New System.Windows.Forms.Button()
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WordWrapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -53,7 +54,7 @@ Partial Class Simplepad
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.FormatToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ViewToolStripMenuItem, Me.FormatToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(351, 24)
@@ -70,7 +71,7 @@ Partial Class Simplepad
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.NewToolStripMenuItem.Text = "New"
         '
         'OpenToolStripMenuItem
@@ -78,14 +79,20 @@ Partial Class Simplepad
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
         Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
         Me.OpenToolStripMenuItem.ShowShortcutKeys = False
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.OpenToolStripMenuItem.Text = "Open..."
+        '
+        'ReloadToolStripMenuItem
+        '
+        Me.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem"
+        Me.ReloadToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
+        Me.ReloadToolStripMenuItem.Text = "Reload from disk"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'SaveAsToolStripMenuItem
@@ -94,7 +101,7 @@ Partial Class Simplepad
         Me.SaveAsToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
         Me.SaveAsToolStripMenuItem.ShowShortcutKeys = False
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(163, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As..."
         '
         'FormatToolStripMenuItem
@@ -107,16 +114,8 @@ Partial Class Simplepad
         'FontToolStripMenuItem
         '
         Me.FontToolStripMenuItem.Name = "FontToolStripMenuItem"
-        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
+        Me.FontToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FontToolStripMenuItem.Text = "Font"
-        '
-        'WordWrapToolStripMenuItem
-        '
-        Me.WordWrapToolStripMenuItem.Checked = True
-        Me.WordWrapToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.WordWrapToolStripMenuItem.Name = "WordWrapToolStripMenuItem"
-        Me.WordWrapToolStripMenuItem.Size = New System.Drawing.Size(134, 22)
-        Me.WordWrapToolStripMenuItem.Text = "Word Wrap"
         '
         'OpenFileDialog1
         '
@@ -128,6 +127,7 @@ Partial Class Simplepad
         Me.rtxtNotepad.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.rtxtNotepad.DataBindings.Add(New System.Windows.Forms.Binding("WordWrap", Global.SimplePad.My.MySettings.Default, "WordWrapFunctional", True, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged))
         Me.rtxtNotepad.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtxtNotepad.Location = New System.Drawing.Point(0, 0)
         Me.rtxtNotepad.MaxLength = 0
@@ -135,6 +135,7 @@ Partial Class Simplepad
         Me.rtxtNotepad.Size = New System.Drawing.Size(351, 240)
         Me.rtxtNotepad.TabIndex = 0
         Me.rtxtNotepad.Text = ""
+        Me.rtxtNotepad.WordWrap = Global.SimplePad.My.MySettings.Default.WordWrapFunctional
         '
         'SaveFileDialog1
         '
@@ -148,12 +149,6 @@ Partial Class Simplepad
         Me.ToolStrip1.TabIndex = 7
         Me.ToolStrip1.Text = "ToolStrip1"
         Me.ToolStrip1.Visible = False
-        '
-        'ReloadToolStripMenuItem
-        '
-        Me.ReloadToolStripMenuItem.Name = "ReloadToolStripMenuItem"
-        Me.ReloadToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ReloadToolStripMenuItem.Text = "Reload from disk"
         '
         'Panel1
         '
@@ -172,8 +167,8 @@ Partial Class Simplepad
         Me.Panel2.Controls.Add(Me.btnNew)
         Me.Panel2.Controls.Add(Me.txtWorkingFile)
         Me.Panel2.Controls.Add(Me.btnSaveAs1)
-        Me.Panel2.Controls.Add(Me.btnSaveFile1)
-        Me.Panel2.Controls.Add(Me.btnOpen1)
+        Me.Panel2.Controls.Add(Me.btnSaveFile)
+        Me.Panel2.Controls.Add(Me.btnOpen)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 266)
         Me.Panel2.Name = "Panel2"
@@ -221,25 +216,39 @@ Partial Class Simplepad
         Me.btnSaveAs1.Text = "Save As..."
         Me.btnSaveAs1.UseVisualStyleBackColor = True
         '
-        'btnSaveFile1
+        'btnSaveFile
         '
-        Me.btnSaveFile1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnSaveFile1.Location = New System.Drawing.Point(126, 38)
-        Me.btnSaveFile1.Name = "btnSaveFile1"
-        Me.btnSaveFile1.Size = New System.Drawing.Size(100, 28)
-        Me.btnSaveFile1.TabIndex = 9
-        Me.btnSaveFile1.Text = "Save File"
-        Me.btnSaveFile1.UseVisualStyleBackColor = True
+        Me.btnSaveFile.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnSaveFile.Location = New System.Drawing.Point(126, 38)
+        Me.btnSaveFile.Name = "btnSaveFile"
+        Me.btnSaveFile.Size = New System.Drawing.Size(100, 28)
+        Me.btnSaveFile.TabIndex = 9
+        Me.btnSaveFile.Text = "Save File"
+        Me.btnSaveFile.UseVisualStyleBackColor = True
         '
-        'btnOpen1
+        'btnOpen
         '
-        Me.btnOpen1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnOpen1.Location = New System.Drawing.Point(20, 38)
-        Me.btnOpen1.Name = "btnOpen1"
-        Me.btnOpen1.Size = New System.Drawing.Size(100, 28)
-        Me.btnOpen1.TabIndex = 7
-        Me.btnOpen1.Text = "Open File"
-        Me.btnOpen1.UseVisualStyleBackColor = True
+        Me.btnOpen.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btnOpen.Location = New System.Drawing.Point(20, 38)
+        Me.btnOpen.Name = "btnOpen"
+        Me.btnOpen.Size = New System.Drawing.Size(100, 28)
+        Me.btnOpen.TabIndex = 7
+        Me.btnOpen.Text = "Open File"
+        Me.btnOpen.UseVisualStyleBackColor = True
+        '
+        'ViewToolStripMenuItem
+        '
+        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.ViewToolStripMenuItem.Text = "View"
+        '
+        'WordWrapToolStripMenuItem
+        '
+        Me.WordWrapToolStripMenuItem.Checked = True
+        Me.WordWrapToolStripMenuItem.CheckState = Global.SimplePad.My.MySettings.Default.WordWrapChecked
+        Me.WordWrapToolStripMenuItem.Name = "WordWrapToolStripMenuItem"
+        Me.WordWrapToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WordWrapToolStripMenuItem.Text = "Word Wrap"
         '
         'Simplepad
         '
@@ -288,6 +297,7 @@ Partial Class Simplepad
     Friend WithEvents btnNew As Button
     Friend WithEvents txtWorkingFile As TextBox
     Friend WithEvents btnSaveAs1 As Button
-    Friend WithEvents btnSaveFile1 As Button
-    Friend WithEvents btnOpen1 As Button
+    Friend WithEvents btnSaveFile As Button
+    Friend WithEvents btnOpen As Button
+    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
 End Class
