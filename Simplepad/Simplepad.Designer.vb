@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Simplepad
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Simplepad
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Simplepad))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -44,7 +44,6 @@ Partial Class Simplepad
         Me.btnSaveAs1 = New System.Windows.Forms.Button()
         Me.btnSaveFile = New System.Windows.Forms.Button()
         Me.btnOpen = New System.Windows.Forms.Button()
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.rtxtNotepad = New System.Windows.Forms.RichTextBox()
         Me.WordWrapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
@@ -54,7 +53,7 @@ Partial Class Simplepad
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.ViewToolStripMenuItem, Me.FormatToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.FormatToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(351, 24)
@@ -221,12 +220,6 @@ Partial Class Simplepad
         Me.btnOpen.Text = "Open File"
         Me.btnOpen.UseVisualStyleBackColor = True
         '
-        'ViewToolStripMenuItem
-        '
-        Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.ViewToolStripMenuItem.Text = "View"
-        '
         'rtxtNotepad
         '
         Me.rtxtNotepad.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -297,5 +290,4 @@ Partial Class Simplepad
     Friend WithEvents btnSaveAs1 As Button
     Friend WithEvents btnSaveFile As Button
     Friend WithEvents btnOpen As Button
-    Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
 End Class
