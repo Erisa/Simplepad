@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -12,13 +13,13 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A simple Notepad clone for Windows. Supports Unix line endings!")>
 <Assembly: AssemblyCompany("Erisa Arrowsmith")>
 <Assembly: AssemblyProduct("Simplepad")>
-<Assembly: AssemblyCopyright("Copyright ©  2017 Erisa Arrowsmith")>
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyCopyright("Copyright ©  2018 Erisa Arrowsmith")>
+<Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("181348fd-4d78-4d24-a26b-222d25476da2")> 
+<Assembly: Guid("181348fd-4d78-4d24-a26b-222d25476da2")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.0.1.0")>
+<Assembly: AssemblyFileVersion("1.0.1.0")>
+<Assembly: NeutralResourcesLanguage("en-GB")>
