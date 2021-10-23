@@ -11,9 +11,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Simplepad")>
 <Assembly: AssemblyDescription("A simple Notepad clone for Windows. Supports Unix line endings!")>
-<Assembly: AssemblyCompany("Erisa Arrowsmith")>
+<Assembly: AssemblyCompany("Erisa A")>
 <Assembly: AssemblyProduct("Simplepad")>
-<Assembly: AssemblyCopyright("Copyright ©  2018 Erisa Arrowsmith")>
+<Assembly: AssemblyCopyright("Copyright ©  2021 Erisa A (erisa.uk)")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
